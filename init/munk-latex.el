@@ -38,6 +38,7 @@
 			;; (?, "phi" "" nil) 
 			(?\C-k "ket" "" nil)
 			(?\C-b "bra" "" nil)
+			((kbd "C-S-d") "partial" "" nil)
 			(?+ "pm" "" nil)
 			)
       )
@@ -62,9 +63,9 @@
   (interactive)
   (if (and (equal this-command last-command)
 	   (looking-back "\\\\cdot" (- (point) 5)))
-      (progn (delete-backward-char 5)
-	     (insert-string "*"))
-    (insert-string "\\cdot")))
+      (progn (delete-char -5)
+	     (insert "*"))
+    (insert "\\cdot")))
 
 ;; ------------------------------------------------------------- [ Instant compile ]
 ;(try-require 'munk-instant-compile)

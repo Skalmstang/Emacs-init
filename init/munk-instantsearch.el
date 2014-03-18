@@ -50,8 +50,9 @@ Makes it possible to the delete the first char of the search string."
       (define-key isearch-mode-map (kbd "<backspace>") 'isearch-other-control-char)
       (isearch-exit)
       ;; isearch gemmer selv hvor den startede
-      (let ((cmd (car isearch-cmds)))
-	(goto-char (isearch-barrier-state cmd)))
+      ;; (let ((cmd (car isearch-cmds)))
+      ;; 	(goto-char (isearch-barrier-state cmd)))
+      (goto-char isearch-barrier)
       (isearch-forward))
      
      ;; Last resort; just do as always.

@@ -55,7 +55,7 @@
 		  ("mathcal{B}" "ℬ")
 		  ("mathcal{F}" "ℱ")
 		  ;Operators
-		  ("times" "×") ("cdot" "•")
+		  ("times" "×") ("cdot" "·")
 		  ("partial" "∂") ("pdiff" "∂") ("ppdiff" '(?∂ (cr . Bl) ?²)) ;("d" "∂")
 		  ("nabla" "∇") ("lap" '(?∇ (Br . Bl) ?²))
 		  ("sum" "∑") ("prod" "∏") 
