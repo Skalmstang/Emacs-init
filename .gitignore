@@ -1,0 +1,5 @@
+*.elc
+.netrc
+.recentf
+.ido.last
+ac-comphist.dat
