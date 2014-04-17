@@ -45,6 +45,8 @@
 
 (add-hook 'LaTeX-mode-hook (lambda()
 			     (local-set-key (kbd "½ H-e") (lambda() (interactive) (LaTeX-math-insert "partial")))
+			     (local-set-key (kbd "½ M-h") (lambda() (interactive) (LaTeX-math-insert "hbar")))
+			     (local-set-key (kbd "½ M-a") (lambda() (interactive) (LaTeX-math-insert "approx")))
 			     (local-set-key (kbd "½ <right>") (lambda() (interactive) (LaTeX-math-insert "rightarrow")))
 			     (local-set-key (kbd "½ <S-right>") (lambda() (interactive) (LaTeX-math-insert "Rightarrow")))
 			     (local-set-key (kbd "½ <left>") (lambda() (interactive) (LaTeX-math-insert "leftarrow")))

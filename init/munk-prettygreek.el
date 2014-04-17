@@ -1,5 +1,6 @@
 (defun pretty-greek ()
   (pretty-all)
+  (pretty-bra)
   (let* ((greek '(;; Greek uppercase
 		  ("Gamma" 67) ("Delta" 68) ("Theta" 72) ("Lambda" 75) ("Xi" 78) ("Pi" 80) ("Sigma" 83) ("Phi" 86) ("Psi" 88) ("Omega" 89) 
 		  ;;lower starts after them
@@ -48,6 +49,7 @@
 		  ("infty" "∞")
 		  ("half" "½") ("frac" '(?Ƒ (Br . cl) ?r))
 		  ("dots" "…") ("ldots" "…") ("cdots" "⋯")
+		  ("dagger" "†")
 
 		  ;Mathcal
 		  ("mathcal{E}" "ℰ") ("cE" "ℰ")
@@ -69,7 +71,8 @@
 		  ("ll" "«") ("gg" "»")
 		  ("sim" "∼") ("approx" "≈") ("simeq" "≃") ("approxeq" "≅")
 		  ("propto" "∝") 
-		  ("equiv" "≡") ("neq" "≠") 
+		  ("equiv" "≡") ("neq" "≠")
+		  ("parallel" "∥")
 		  ;Arrows
 		  ("Leftarrow" "⇐") ("Rightarrow" "⇒") ("Leftrightarrow" "⇔")
 		  ("leftarrow" "←") ("rightarrow" "→") ("leftrightarrow" "↔")
@@ -90,7 +93,8 @@
       
       (font-lock-add-keywords nil
 			      `((,(concat "\\(\\\\" word "\\)[a-zA-Z]") ; Notice the \ prefix, this is for LaTeX 
-				 (0 (progn (decompose-region
+				 (0 (progn
+				      (decompose-region
 					    (match-beginning 1)
 					    (match-end 1))
 					   nil)))))
@@ -102,6 +106,63 @@
 					    ,greek-char) 
 					   nil))))))))
 
+;; For later 〈〉
 
+(defun pretty-bra()
+  (let (word first last
+	     (wraps '(
+		      ("bra" "〈" "|") ("ket" "|" "〉")
+		      )))
+    (dolist (next wraps)
+      (setq word (car next)
+	    first (elt next 1)
+	    last (elt next 2))
+  
+    (font-lock-add-keywords nil
+			    `((,(concat "\\(\\\\" word "\\)[^{]") ; Notice the \ prefix, this is for LaTeX 
+			       (0 (progn
+				    (decompose-region
+				     (match-beginning 1)
+				     (match-end 1))
+
+				    (backward-char)
+				    (unwind-protect
+					(progn
+					  (insert "{")
+					  (backward-char)
+					  (condition-case ()
+					      (progn
+						(setq pos (scan-sexps (point) 1))
+						(decompose-region
+						 (1- pos) pos)
+						)
+					    (error (setq pos t mismatch t)))
+					  )
+				      (delete-region (match-end 1) (match-end 0)))
+				    
+				    nil)))))
+    (font-lock-add-keywords nil 
+			    `((,(concat "\\(\\\\" word "{\\)")
+			       (0 (progn
+
+				    (condition-case ()
+					(setq pos (scan-sexps (1- (match-end 1)) 1))
+				      (error (setq pos nil)))
+				    (if (not pos)
+					(decompose-region
+					 (match-beginning 1)
+					 (match-end 1))					
+					
+				    (compose-region 
+				    	  (match-beginning 1) 
+				    	  (match-end 1)
+				    	  ,first)
+				    (compose-region
+				     (1- pos)
+				     pos
+				     ,last))
+					 nil))))))))
+
+  
 
 (provide 'munk-prettygreek)
