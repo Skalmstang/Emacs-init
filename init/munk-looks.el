@@ -1,6 +1,6 @@
 ;; Font
 ;; Sætter std. font til 10.5pt Consolas istedet for Courier
-(set-face-attribute 'default nil :font "Consolas-10")
+;;(set-face-attribute 'default nil :font "Consolas-10")
 
 
 ;; Ingen scrollbar
@@ -61,8 +61,8 @@
 (add-hook 'window-setup-hook 'maximize-frame t)
 
 ;; Adding custom themes
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'zenburn t)
+;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+;;(load-theme 'zenburn t)
 
 
 

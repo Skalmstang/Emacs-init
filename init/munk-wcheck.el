@@ -13,7 +13,7 @@
   "Move point backward to previous marked text area." t)
 
 ;; ------------------------------------------------------------- [ Sprog config ]
-(setq wcheck-enchant-path "C:/Program Files/Enchant/enchant.exe"
+(setq wcheck-enchant-path "enchant"
       wcheck-language "Danish"
       wcheck-language-data
       `(("Danish"
@@ -67,8 +67,7 @@
 
 ;; ------------------------------------------------------------- [ PWL funktioner ]
 ;; Location of the pwls
-(defvar wcheck-pwl-loc
-  (concat (getenv "APPDATA") "\\enchant\\"))
+(defvar wcheck-pwl-loc ".enchant"))
 
 (defvar wcheck-mode nil "wcheck-mode not enabled from start.")
 
