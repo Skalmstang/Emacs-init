@@ -61,8 +61,7 @@
 (add-hook 'window-setup-hook 'maximize-frame t)
 
 ;; Adding custom themes
-;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-;;(load-theme 'zenburn t)
+(load-theme 'zenburn t)
 
 
 

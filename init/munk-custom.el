@@ -9,8 +9,6 @@
  '(LaTeX-float nil)
  '(LaTeX-includegraphics-options-alist (quote ((0) (4) (5 trim) (16 height totalheight width scale angle origin bb viewport trim clip keepaspectratio page))))
  '(LaTeX-top-caption-list (quote ("table")))
- '(TeX-view-program-list (quote (("SumatraPDF" "SumatraPDF -reuse-instance %o"))))
- '(TeX-view-program-selection (quote (((output-dvi style-pstricks) "dvips and start") (output-dvi "Yap") (output-pdf "SumatraPDF") (output-html "start"))))
  '(font-latex-match-function-keywords (quote (("includegraphics" "[{"))))
  '(font-latex-match-math-command-keywords (quote (("dmath" "{") ("dmath*" "{") ("dgroup" "{") ("dgroup*" "{"))))
  '(font-latex-match-reference-keywords (quote (("Fref" "{") ("fref" "{") ("cref" "{") ("Cref" "{") ("Vref" "{"))))
@@ -30,6 +28,7 @@
  '(font-latex-sectioning-5-face ((t (:inherit variable-pitch :weight bold))))
  '(font-lock-keyword-face ((((class color) (min-colors 88) (background dark)) (:foreground "green"))))
  '(font-lock-warning-face ((((class color) (min-colors 88) (background dark)) (:foreground "red" :weight bold))))
- '(linum ((t (:inherit (shadow default) :background "gray10")))))
+ '(linum ((t (:inherit (shadow default) :background "gray10"))))
+ '(custom-safe-themes (quote ("dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" default))))
 
 (provide 'munk-custom)

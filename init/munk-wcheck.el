@@ -67,7 +67,7 @@
 
 ;; ------------------------------------------------------------- [ PWL funktioner ]
 ;; Location of the pwls
-(defvar wcheck-pwl-loc ".enchant"))
+(defvar wcheck-pwl-loc ".enchant")
 
 (defvar wcheck-mode nil "wcheck-mode not enabled from start.")
 
