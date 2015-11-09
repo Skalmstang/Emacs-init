@@ -13,7 +13,24 @@
   "Move point backward to previous marked text area." t)
 
 ;; ------------------------------------------------------------- [ Sprog config ]
-(setq wcheck-enchant-path "enchant"
+
+;; (setq wcheck-language-data
+;;       '(("Danish"
+;; 	 (program . "enchant")
+;; 	 (args "-l" "-d" "da_DK")
+;; 	 (action-program . "enchant")
+;; 	 (action-args "-a" "-d" "da_DK")
+;; 	 (action-parser . wcheck-parser-ispell-suggestions))))
+
+;; ;; (setq wcheck-language-data
+;; ;;       '(("British English"
+;; ;; 	 (program . "/usr/bin/enchant")
+;; ;; 	 (args "-l" "-d" "british")
+;; ;; 	 (action-program . "/usr/bin/enchant")
+;; ;; 	 (action-args "-a" "-d" "british")
+;; ;; 	 (action-parser . wcheck-parser-ispell-suggestions))))
+
+(setq wcheck-enchant-path "/usr/bin/enchant"
       wcheck-language "Danish"
       wcheck-language-data
       `(("Danish"
