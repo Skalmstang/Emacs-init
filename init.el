@@ -1,7 +1,7 @@
 (package-initialize)
 (setq package-enable-at-startup nil) ;; We load the package we want ourselves
 (add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/"))
+	     '("marmalade" . "https://marmalade-repo.org/packages/"))
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/my-lisp")
