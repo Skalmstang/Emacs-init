@@ -1,0 +1,3 @@
+[submodule "lisp/tiny"]
+	path = lisp/tiny
+	url = git@github.com:jaalto/project--emacs-tiny-tools.git
