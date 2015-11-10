@@ -1,4 +1,5 @@
 (package-initialize)
+(setq package-enable-at-startup nil) ;; We load the package we want ourselves
 (add-to-list 'package-archives
 	     '("marmalade" . "http://marmalade-repo.org/packages/"))
 
@@ -28,6 +29,9 @@
 (try-require 'munk-latex)
 (try-require 'munk-wcheck)
 
+;; Remove problem with dead keys
+(require 'iso-transl)
 
 (try-require 'munk-custom)
+
 
