@@ -3,3 +3,8 @@
 .recentf
 .ido.last
 ac-comphist.dat
+*.elc
+.netrc
+.recentf
+.ido.last
+ac-comphist.dat
