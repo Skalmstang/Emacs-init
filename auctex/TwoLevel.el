@@ -1,0 +1,36 @@
+(TeX-add-style-hook "TwoLevel"
+ (lambda ()
+    (LaTeX-add-labels
+     "sec:level-atom"
+     "eq:splitting"
+     "fig:twolevel:setup"
+     "eq:field"
+     "eq:Hamiltonian"
+     "eq:waveequation"
+     "eq:normalization"
+     "hamiltonian:interact"
+     "eq:dipole:decomposed"
+     "eq:field:decomposed"
+     "hamiltonian:product"
+     "eq:SE:produce"
+     "eq:coupled"
+     "eq:coupled:ground"
+     "eq:coupled:exited"
+     "eq:coupled:trans"
+     "eq:coupled:trans:ground"
+     "eq:coupled:trans:exited"
+     "sec:rabi-osc"
+     "eq:superpos"
+     "eq:superpos:ground"
+     "eq:superpos:exited"
+     "eq:solution:ground"
+     "fig:rabiFlop"
+     "eq:possibility:exited"
+     "sec:dressed-state"
+     "fig:DressedState"
+     "eq:adiabatic-transfer")
+    (TeX-run-style-hooks
+     "figures/twolevel"
+     "Figures/rabiFlopping"
+     "Figures/DressedState")))
+

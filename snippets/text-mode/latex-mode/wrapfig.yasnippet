@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# contributor : Mads D. Kristensen <madsdk@gmail.com>
+# key : wrapfig
+# group: environments
+# name : \begin{wrapfigure} ... \end{wrapfigure}
+# --
+\begin{wrapfigure}{${3:position}}{0.4\columnwidth}
+  \centering
+  \includegraphics[width=0.4\columnwidth]{$0}
+  \caption{${1:caption}}
+  \label{${2:"waiting for reftex-label call..."$(unless yas/modified-p (reftex-label nil 'dont-insert))}}
+\end{wrapfigure}

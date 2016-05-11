@@ -1,0 +1,43 @@
+(TeX-add-style-hook "RDlaserreport_Preamble"
+ (lambda ()
+    (TeX-add-symbols
+     '("nobryd" 1)
+     "Kalium"
+     "RD"
+     "KaliumFrequency"
+     "transition"
+     "ORIincludegraphics")
+    (TeX-run-style-hooks
+     "siunitx"
+     "scrextend"
+     "verbatim"
+     "units"
+     "textcomp"
+     "cleveref"
+     "noabbrev"
+     "xspace"
+     "lipsum"
+     "mhchem"
+     "todonotes"
+     "fixme"
+     "draft"
+     "english"
+     "subcaption"
+     "threeparttable"
+     "flushleft"
+     "wrapfig"
+     "graphicx"
+     "lineno"
+     "color"
+     "ulem"
+     "amsmath"
+     "latex2e"
+     "revtex4-110"
+     "revtex4-1"
+     "aps"
+     "pra"
+     "twocolumn"
+     "10pt"
+     "bibnotes"
+     "CustomMath")))
+

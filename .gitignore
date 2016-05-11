@@ -1,0 +1,7 @@
+*.elc
+.netrc
+.recentf
+.ido.last
+ac-comphist.dat
+*modstridende kopi*
+.emacs_backups/*

@@ -1,0 +1,13 @@
+;;; sml-modeline-autoloads.el --- automatically extracted autoloads
+;;
+;;; Code:
+
+
+(provide 'sml-modeline-autoloads)
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; no-update-autoloads: t
+;; coding: utf-8
+;; End:
+;;; sml-modeline-autoloads.el ends here

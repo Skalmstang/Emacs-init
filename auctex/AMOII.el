@@ -1,0 +1,81 @@
+(TeX-add-style-hook "AMOII"
+ (lambda ()
+    (TeX-add-symbols
+     '("framedGraphics" ["argument"] 1)
+     '("Insert" ["argument"] 4)
+     '("stext" 1)
+     '("x" 1)
+     '("mybluebox" 1)
+     '("InsertBraceOver" 3)
+     '("InsertBrace" 3)
+     '("tikzmark" 1)
+     '("textoverline" 1)
+     "BraceAmplitude"
+     "ORIincludegraphics"
+     "ORcancelto"
+     "ORcancel")
+    (TeX-run-style-hooks
+     "xparse"
+     "cancel"
+     "calc"
+     "braket"
+     "listliketab"
+     "siunitx"
+     "natbib"
+     "square"
+     "sort"
+     "comma"
+     "numbers"
+     "nomencl"
+     "xcolor"
+     "x11names"
+     "algorithm2e"
+     "linesnumbered"
+     "lined"
+     "boxed"
+     "commentsnumbered"
+     "ruled"
+     "listings"
+     "xspace"
+     "wrapfig"
+     "subcaption"
+     "threeparttable"
+     "flushleft"
+     "pgfplots"
+     "tikz"
+     "pdfpages"
+     "titlesec"
+     "placeins"
+     "graphicx"
+     "soul"
+     "lipsum"
+     "mhchem"
+     "autonum"
+     "cleveref"
+     "noabbrev"
+     "hyperref"
+     "fixme"
+     "draft"
+     "luatextra"
+     "unicode-math"
+     "lmodern"
+     "fontenc"
+     "T1"
+     "inputenc"
+     "utf8"
+     "iftex"
+     "empheq"
+     "amssymb"
+     "amsmath"
+     "latex2e"
+     "memoir11"
+     "memoir"
+     "english"
+     "a4paper"
+     "twoside"
+     "article"
+     "11pt"
+     "fleqn"
+     "customMath"
+     "AMOII_4")))
+

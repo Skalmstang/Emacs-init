@@ -1,0 +1,57 @@
+(TeX-add-style-hook "Preamble"
+ (lambda ()
+    (TeX-add-symbols
+     '("framedGraphics" ["argument"] 1)
+     '("nobryd" 1)
+     '("stext" 1)
+     '("mybluebox" 1)
+     "ORIincludegraphics"
+     "newmathcommand"
+     "renewmathcommand")
+    (TeX-run-style-hooks
+     "xparse"
+     "datetime"
+     "nodayofweek"
+     "cleveref"
+     "noabbrev"
+     "hyperref"
+     "calc"
+     "braket"
+     "listliketab"
+     "siunitx"
+     "natbib"
+     "square"
+     "sort"
+     "comma"
+     "numbers"
+     "nomencl"
+     "xcolor"
+     "x11names"
+     "listings"
+     "xspace"
+     "subcaption"
+     "threeparttable"
+     "flushleft"
+     "pgfplots"
+     "tikz"
+     "titlesec"
+     "placeins"
+     "wrapfig"
+     "graphicx"
+     "soul"
+     "mhchem"
+     "fixme"
+     "draft"
+     "unicode-math"
+     "empheq"
+     "amsmath"
+     "latex2e"
+     "memoir11"
+     "memoir"
+     "english"
+     "a4paper"
+     "twoside"
+     "article"
+     "11pt"
+     "CustomMath")))
+
