@@ -6,8 +6,8 @@
 ;; LaTeX specifikke keybinds
 (defun munk-latex-init ()
   (local-set-key [f5] (tex-build-command-function "LaTeX" nil t))  ; f6:  Compile LaTeX file
-  (local-set-key [f6] (tex-build-command-function "LaTeX" nil t))  ; f6:  Compile LaTeX file
-  (local-set-key [f7] (tex-build-command-function "View" nil t))   ; f7:  View output
+  (local-set-key [f6] (tex-build-command-function "View" nil t))  ; f6:  Compile LaTeX file
+  (local-set-key [f7] (tex-build-command-function "BibTeX" nil t))   ; f7:  View output
   (local-set-key "\C-ca" 'align)				     ; Bind align to `C-ca'
   (local-set-key [f11] 'TeX-next-error)                            ; f11: Goto next found LaTeX error
   (local-set-key [f12] 'TeX-previous-error)                            ; f11: Goto next found LaTeX error
