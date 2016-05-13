@@ -1,7 +1,12 @@
+(require 'gnutls)
 (package-initialize)
 (setq package-enable-at-startup nil) ;; We load the package we want ourselves
+;; (add-to-list 'package-archives
+;; 	     '("marmalade" . "https://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
-	     '("marmalade" . "https://marmalade-repo.org/packages/"))
+	     '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/"))
 
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/my-lisp")
