@@ -1,5 +1,7 @@
 ;; Config og yderligere sources til ac
-(add-to-list 'load-path "~/.emacs.d/lisp/auto-complete")
+;; (add-to-list 'load-path "~/.emacs.d/lisp/auto-complete")
+(global-auto-complete-mode t) ;; For now make sure ac works!
+
 
 ;; ------------------------------------------------------------- [ Autocomplete mode ]
 ;; Visiual autocompletion 

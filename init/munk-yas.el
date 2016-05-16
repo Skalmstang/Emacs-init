@@ -11,4 +11,5 @@
 ;;       '("~/.emacs.d/snippets"                 ;; personal snippets
 ;;         ))
 ;; (yas-global-mode 1)
+;; (setq ac-source-yasnippet t)
 (provide 'munk-yas)

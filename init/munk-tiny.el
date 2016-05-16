@@ -1,7 +1,7 @@
 ;; ------------------------------------------------------------- [ tinyeat ]
 
 
-(add-to-list 'load-path "~/.emacs.d/lisp/tiny/lisp/tiny")
+;; (add-to-list 'load-path "~/.emacs.d/lisp/tiny/lisp/tiny")
 
 ;; ------------------------------------------------------------- [ tinyeat ]
 
