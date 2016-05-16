@@ -1,3 +1,8 @@
+(add-to-list 'load-path "~/.emacs.d/init")
+(add-to-list 'load-path "~/.emacs.d/my-lisp")
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(require 'th3is-site-start)
+
 (require 'gnutls)
 (package-initialize)
 
@@ -9,15 +14,11 @@
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.org/packages/"))
 
-(add-to-list 'load-path "~/.emacs.d/init")
-(add-to-list 'load-path "~/.emacs.d/my-lisp")
-(add-to-list 'load-path "~/.emacs.d/lisp")
-
-
 (setq debug-on-error nil)
 
 
 (require 'munk-util)
+
 (try-require 'munk-server)
 (try-require 'munk-looks)
 (try-require 'munk-edit)
