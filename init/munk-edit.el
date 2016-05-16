@@ -12,6 +12,12 @@
 ;; Auto indent ved enter
 (global-set-key (kbd "RET") 'newline-and-indent)
 
+;; `Alt-f4' as usual
+(global-set-key (kbd "<M-f4>") 'save-buffers-kill-emacs)
+
+;; `Ctrl-f4' close buffer
+(global-set-key (kbd "<C-f4>") (lambda() (interactive) (kill-buffer (current-buffer))))
+
 ;; ------------------------------------------------------------- [ Delete line ]
 ;; `M-k' sletter linien uden at gemme
 (global-set-key "\M-k" 'munk-delete-line)
