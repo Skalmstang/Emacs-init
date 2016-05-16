@@ -3,7 +3,6 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (require 'th3is-site-start)
 
-(require 'gnutls)
 (package-initialize)
 
 (setq package-enable-at-startup nil) ;; We load the package we want ourselves
