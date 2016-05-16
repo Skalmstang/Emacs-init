@@ -1,5 +1,7 @@
 ;; Setup af wcheck
 
+
+
 ;; Loader wcheck-mode når der er brug for dem
 (autoload 'wcheck-mode "wcheck-mode"
   "Toggle wcheck-mode." t)
@@ -12,26 +14,12 @@
 (autoload 'wcheck-jump-backward "wcheck-mode"
   "Move point backward to previous marked text area." t)
 
+;; Start wcheck with LaTeX automatic
+(add-hook 'LaTeX-mode-hook 'wcheck-mode)
+
 ;; ------------------------------------------------------------- [ Sprog config ]
-
-;; (setq wcheck-language-data
-;;       '(("Danish"
-;; 	 (program . "enchant")
-;; 	 (args "-l" "-d" "da_DK")
-;; 	 (action-program . "enchant")
-;; 	 (action-args "-a" "-d" "da_DK")
-;; 	 (action-parser . wcheck-parser-ispell-suggestions))))
-
-;; ;; (setq wcheck-language-data
-;; ;;       '(("British English"
-;; ;; 	 (program . "/usr/bin/enchant")
-;; ;; 	 (args "-l" "-d" "british")
-;; ;; 	 (action-program . "/usr/bin/enchant")
-;; ;; 	 (action-args "-a" "-d" "british")
-;; ;; 	 (action-parser . wcheck-parser-ispell-suggestions))))
-
-(setq wcheck-enchant-path "/usr/bin/enchant"
-      wcheck-language "Danish"
+(setq wcheck-enchant-path (concat (substring data-directory 0 (string-match "/Programmer/" data-directory)) "/Programmer/Enchant/enchant.exe")
+      wcheck-language "English"
       wcheck-language-data
       `(("Danish"
 	 (program . ,wcheck-enchant-path)
@@ -70,7 +58,7 @@
 	(case-fold . nil)
 	(read-or-skip-faces
 	 (emacs-lisp-mode read
-	  font-lock-comment-face font-lock-doc-face)
+			  font-lock-comment-face font-lock-doc-face)
 	 (latex-mode read                     ; "read" the following faces
 		     nil                      ; nil means normal text
 		     font-latex-sectioning-1-face
@@ -84,7 +72,8 @@
 
 ;; ------------------------------------------------------------- [ PWL funktioner ]
 ;; Location of the pwls
-(defvar wcheck-pwl-loc ".enchant")
+(defvar wcheck-pwl-loc
+  (concat (getenv "APPDATA") "\\enchant\\"))
 
 (defvar wcheck-mode nil "wcheck-mode not enabled from start.")
 
@@ -95,7 +84,23 @@
       (call-interactively 'wcheck-actions)
     (call-interactively 'wcheck-mode)))
 
+;; (defadvice wcheck-mode-turn-on (before language activate)
+;;   "Try to guess the language to use for this buffer if `wcheck-language' have the default value.
 
+;; Current supported modes is:
+;;   - LaTeX mode (AUCTeX) [assumes that you're using the babel packages]"
+;;   ;; When we haven't selected a specific lang for this buffer
+;;   ;; Note that wcheck-language is always a buffer-local var
+;;   (when (equal wcheck-language (default-value 'wcheck-language))
+;;     ;; Mode-specific behaviour
+;;     (cond
+;;      ;; LaTeX mode
+;;      ((eq major-mode 'latex-mode)
+;;       (let ((language (caar (last (LaTeX-babel-active-languages)))))
+;; 	(and language			;When language is not nil
+;; 	     (setq wcheck-language (capitalize language)))))
+;;      ((eq major-mode 'emacs-lisp-mode)
+;;       (setq wcheck-language "English")))))
 
 (defun wcheck-parse-to-pwl (data)
   "Writes the marked word to the pwl"
@@ -128,9 +133,7 @@
 ;; Gør sproget til file-var eller dir-var
 (defun wcheck-file-language (&optional arg)
   "Add the current value of `wcheck-language' to the file local variables
-
 With ARG or prefix argument, make it dir local variable instead.
-
 NOTE: Effort should be made, to guess the language instead of setting it.
       Such functionality should be added to the defadvice of `wcheck-mode-turn-on'."
   (interactive "P")
@@ -173,6 +176,4 @@ NOTE: Effort should be made, to guess the language instead of setting it.
 
 
 (provide 'munk-wcheck)
-
-
 
