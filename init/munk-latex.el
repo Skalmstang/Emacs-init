@@ -134,10 +134,10 @@ Else find the .tex file no else is linking to.")
 ;; Loader forward-search første gang der trykkes f8
 (autoload 'sumatra-jump-to-line "sumatra-forward" t)
 
-(setenv "PATH" (concat (getenv "PATH") path-separator "C:/Program Files (x86)/SumatraPDF"))
-(setq exec-path (add-to-list 'exec-path "C:/Program Files (x86)/SumatraPDF"))
+;; (setenv "PATH" (concat (getenv "PATH") path-separator "C:/Program Files (x86)/SumatraPDF"))
+;; (setq exec-path (add-to-list 'exec-path "C:/Program Files (x86)/SumatraPDF"))
 
-(setq LaTeX-command "latex -synctex=-1")
+;; (setq LaTeX-command "latex -synctex=-1")
 
 ;; ------------------------------------------------------------- [ Math macro ]
 ;; Insert $ when inserting from the math menu outside math environment.
