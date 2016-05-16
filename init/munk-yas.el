@@ -1,15 +1,14 @@
-;; (add-hook 'LaTeX-mode-hook (lambda ()
+1;; (add-hook 'LaTeX-mode-hook (lambda ()
 ;; 			     (try-require 'yasnippet)
 ;; 			     (yas/load-directory "~/.emacs.d/snippets")))
 ;; (require 'yas-jit)
 ;; (setq yas/root-directory "~/.emacs.d/snippets")
 ;; (yas/jit-load)
 
-(try-require 'yasnippet)
+(require 'yasnippet)
+
 (yas/load-directory "~/.emacs.d/snippets")
-;; (setq yas-snippet-dirs
-;;       '("~/.emacs.d/snippets"                 ;; personal snippets
-;;         ))
-;; (yas-global-mode 1)
-;; (setq ac-source-yasnippet t)
+
+
+
 (provide 'munk-yas)

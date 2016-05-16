@@ -1,6 +1,6 @@
 ;; Config og yderligere sources til ac
 ;; (add-to-list 'load-path "~/.emacs.d/lisp/auto-complete")
-(global-auto-complete-mode t) ;; For now make sure ac works!
+;; (global-auto-complete-mode t) ;; For now make sure ac works!
 
 
 ;; ------------------------------------------------------------- [ Autocomplete mode ]
@@ -10,6 +10,8 @@
 (add-to-list 'ac-modes 'latex-mode)
 (ac-config-default)
 (global-auto-complete-mode 1)
+(add-hook 'LaTeX-mode-hook (lambda () (yas/minor-mode-on)))
+
 
 ;; --------------------------------------------------------------[ LaTeX completion ]
 (add-hook 'LaTeX-mode-hook (lambda ()

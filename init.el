@@ -1,5 +1,6 @@
 (require 'gnutls)
 (package-initialize)
+
 (setq package-enable-at-startup nil) ;; We load the package we want ourselves
 ;; (add-to-list 'package-archives
 ;; 	     '("marmalade" . "https://marmalade-repo.org/packages/"))
@@ -28,7 +29,7 @@
 (try-require 'munk-recentf)
 (try-require 'munk-unscroll)
 (try-require 'munk-yas)
-;;(try-require 'munk-ac)
+(try-require 'munk-ac)
 
 (try-require 'munk-elisp)
 (try-require 'munk-latex)
