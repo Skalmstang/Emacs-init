@@ -47,7 +47,8 @@
  '(preview-default-option-list (quote ("displaymath" "floats" "textmath" "footnotes")))
  '(safe-local-variable-values
    (quote
-    ((TeX-master . "Master")
+    ((TeX-engine . pdfLaTeX)
+     (TeX-master . "Master")
      (TeX-master . "Masters")
      (TeX-master . t)
      (wcheck-language . "English")
@@ -58,8 +59,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes (quote ("dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" default)))
- '(font-latex-math-face ((((class color) (background dark)) (:foreground "SandyBrown"))) t)
- '(font-latex-sectioning-5-face ((t (:inherit variable-pitch :weight bold))) t)
+ '(font-latex-math-face ((((class color) (background dark)) (:foreground "SandyBrown"))))
+ '(font-latex-sectioning-5-face ((t (:inherit variable-pitch :weight bold))))
  '(font-lock-keyword-face ((((class color) (min-colors 88) (background dark)) (:foreground "green"))))
  '(font-lock-warning-face ((((class color) (min-colors 88) (background dark)) (:foreground "red" :weight bold))))
  '(linum ((t (:inherit (shadow default) :background "gray10")))))

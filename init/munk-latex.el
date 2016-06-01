@@ -8,6 +8,7 @@
   (local-set-key [f5] (tex-build-command-function "LaTeX" nil t))  ; f6:  Compile LaTeX file
   (local-set-key [f6] (tex-build-command-function "View" nil t))  ; f6:  Compile LaTeX file
   (local-set-key [f7] (tex-build-command-function "BibTeX" nil t))   ; f7:  View output
+  (local-set-key [S-f7] (tex-build-command-function "Nomenclature" nil t))
   (local-set-key "\C-ca" 'align)				     ; Bind align to `C-ca'
   (local-set-key [f11] 'TeX-next-error)                            ; f11: Goto next found LaTeX error
   (local-set-key [f12] 'TeX-previous-error)                            ; f11: Goto next found LaTeX error
@@ -24,6 +25,16 @@
 ;; Definer binds, når LaTeX-mode starter. Lavet sådan pga. AUCTeX autoloader
 
 (add-hook 'LaTeX-mode-hook 'munk-latex-init)
+
+;; Th3is hack
+;;nomenclature for latex
+(eval-after-load "tex"
+  '(add-to-list 'TeX-command-list 
+                '("Nomenclature" "makeindex %s.nlo -s nomencl.ist -o %s.nls"
+                  (lambda (name command file)
+                    (TeX-run-compile name command file)
+                    (TeX-process-set-variable file 'TeX-command-next TeX-command-default))
+                  nil t :help "Create nomenclature file")))
 
 ;; ------------------------------------------------------------- [ Math mode ]
 
@@ -55,6 +66,7 @@
 			     (local-set-key (kbd "½ M-<left>") (lambda() (interactive) (LaTeX-math-insert "Leftrightarrow")))
 			     (local-set-key (kbd "½ M-d") (lambda() (interactive) (LaTeX-math-insert "partial")))
 			     (local-set-key (kbd "½ M-t") (lambda() (interactive) (LaTeX-math-insert "dagger")))
+			     (local-set-key (kbd "½ M-s") (lambda() (interactive) (LaTeX-math-insert "sum")))
 			     ))
 
 
@@ -139,7 +151,7 @@ Else find the .tex file no else is linking to.")
 ;; (setenv "PATH" (concat (getenv "PATH") path-separator "C:/Program Files (x86)/SumatraPDF"))
 ;; (setq exec-path (add-to-list 'exec-path "C:/Program Files (x86)/SumatraPDF"))
 
-;; (setq LaTeX-command "latex -synctex=-1")
+(setq LaTeX-command "latex -synctex=-1")
 
 ;; ------------------------------------------------------------- [ Math macro ]
 ;; Insert $ when inserting from the math menu outside math environment.
