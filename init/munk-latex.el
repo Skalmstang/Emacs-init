@@ -84,8 +84,8 @@
     (insert "\\cdot")))
 
 ;; ------------------------------------------------------------- [ Instant compile ]
-;(try-require 'munk-instant-compile)
-;(add-hook 'LaTeX-mode-hook 'instant-compile-mode)
+					;(try-require 'munk-instant-compile)
+					;(add-hook 'LaTeX-mode-hook 'instant-compile-mode)
 
 ;; ------------------------------------------------------------- [ Font locking ]
 (setq font-latex-match-warning-keywords '("fixme" "fxfatal"))
@@ -192,8 +192,8 @@ Else find the .tex file no else is linking to.")
 ;; ------------------------------------------------------------- [ AUCTeX & RefTeX ]
 ;; ---------------------------------------------------------------------------------
 
-;(load "auctex.el" nil t t)
-;(load "preview-latex.el" nil t t)
+					;(load "auctex.el" nil t t)
+					;(load "preview-latex.el" nil t t)
 
 ;; Customization for a Directory directory containing automatically generated TeX information. Must
 ;; end with a slash
