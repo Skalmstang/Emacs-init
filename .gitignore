@@ -7,3 +7,10 @@ auto-save-list/*
 *modstridende kopi*
 *.*~
 .#.recentf
+auctex/
+elpa/
+history
+lisp/
+server/
+snippets/
+themes/

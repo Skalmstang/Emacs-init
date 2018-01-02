@@ -18,7 +18,7 @@
 (add-hook 'LaTeX-mode-hook 'wcheck-mode)
 
 ;; ------------------------------------------------------------- [ Sprog config ]
-(setq wcheck-enchant-path  "c:/Program Files/Enchant/enchant.exe"
+(setq wcheck-enchant-path (concat (substring data-directory 0 (string-match "th3is/" data-directory)) "th3is/Programmer/Enchant/enchant.exe")
       wcheck-language "English"
       wcheck-language-data
       `(("Danish"
