@@ -8,7 +8,9 @@
   (local-set-key [f5] (tex-build-command-function "LaTeX" nil t))  ; f6:  Compile LaTeX file
   (local-set-key [f6] (tex-build-command-function "View" nil t))  ; f6:  Compile LaTeX file
   (local-set-key [f7] (tex-build-command-function "BibTeX" nil t))   ; f7:  View output
+  (local-set-key [S-M-f7] (tex-build-command-function "Biber" nil t))   ; f7:  View output
   (local-set-key [S-f7] (tex-build-command-function "Nomenclature" nil t))
+  (local-set-key [M-f7] (tex-build-command-function "Glossary" nil t))
   (local-set-key "\C-ca" 'align)				     ; Bind align to `C-ca'
   (local-set-key [f11] 'TeX-next-error)                            ; f11: Goto next found LaTeX error
   (local-set-key [f12] 'TeX-previous-error)                            ; f11: Goto next found LaTeX error
@@ -35,6 +37,14 @@
                     (TeX-run-compile name command file)
                     (TeX-process-set-variable file 'TeX-command-next TeX-command-default))
                   nil t :help "Create nomenclature file")))
+
+(eval-after-load "tex"
+  '(add-to-list 'TeX-command-list 
+                '("Glossary" "makeindex %s.glo -s %s.ist -o %s.gls"
+                  (lambda (name command file)
+                    (TeX-run-compile name command file)
+                    (TeX-process-set-variable file 'TeX-command-next TeX-command-default))
+                  nil t :help "Create glossary file")))
 
 ;; ------------------------------------------------------------- [ Math mode ]
 
@@ -67,6 +77,7 @@
 			     (local-set-key (kbd "½ M-d") (lambda() (interactive) (LaTeX-math-insert "partial")))
 			     (local-set-key (kbd "½ M-t") (lambda() (interactive) (LaTeX-math-insert "dagger")))
 			     (local-set-key (kbd "½ M-s") (lambda() (interactive) (LaTeX-math-insert "sum")))
+			     (local-set-key (kbd "½ M-p") (lambda() (interactive) (LaTeX-math-insert "propto")))
 			     ))
 
 

@@ -44,10 +44,14 @@
    (quote
     ("\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./" "\\.aux" "\\.out" "\\.synctex" "_region_" "desktop\\.ini")))
  '(ido-work-directory-list-ignore-regexps (quote ("SetPointP")))
+ '(package-selected-packages
+   (quote
+    (zenburn-theme yasnippet yas-jit wcheck-mode undo-tree tiny sumatra-forward sml-modeline smex math-symbol-lists diminish auto-complete auctex)))
  '(preview-default-option-list (quote ("displaymath" "floats" "textmath" "footnotes")))
  '(safe-local-variable-values
    (quote
-    ((TeX-engine . pdfLaTeX)
+    ((wcheck-language . "Danish")
+     (TeX-engine . pdfLaTeX)
      (TeX-master . "Master")
      (TeX-master . "Masters")
      (TeX-master . t)

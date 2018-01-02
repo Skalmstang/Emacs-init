@@ -36,7 +36,7 @@
 (blink-cursor-mode 0)
 
 ;; Antal linier før den wrapper
-(setq-default fill-column 75)
+(setq-default fill-column 70)
 
 ;; Ingen splashscreen
 (setq inhibit-splash-screen t)
